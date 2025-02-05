@@ -1,0 +1,58 @@
+site_name: UiPath Python SDK
+site_description: Python SDK for UiPath Orchestrator API
+repo_url: https://github.com/christianblandford/uipath
+repo_name: christianblandford/uipath
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [uipath]
+          options:
+            show_source: false
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference:
+    - Client: api/client.md
+    - Resources:
+      - Assets: api/resources/assets.md
+      - Folders: api/resources/folders.md
+      - Jobs: api/resources/jobs.md
+      - Libraries: api/resources/libraries.md
+      - Machines: api/resources/machines.md
+      - Packages: api/resources/packages.md
+      - Processes: api/resources/processes.md
+      - Queues: api/resources/queues.md
+      - Releases: api/resources/releases.md
+      - Robots: api/resources/robots.md
+  - Examples: examples.md 
