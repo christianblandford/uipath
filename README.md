@@ -23,13 +23,8 @@ auth = UiPathAuth(
 )
 
 # Create API client
-client = UiPathClient(auth)
+uipath = UiPathClient(auth)
 
-# Use the robots resource
-robots = RobotsResource(client)
-
-# List all robots
-all_robots = robots.list_robots()
 ```
 
 ## Features
