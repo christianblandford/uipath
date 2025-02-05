@@ -34,33 +34,44 @@ all_robots = robots.list_robots()
 
 ## Features
 
-- Simple, intuitive interface for UiPath APIs
+- Complete API coverage for UiPath Orchestrator
+- Simple, intuitive interface
 - Authentication handling
 - Comprehensive error handling
 - Type hints for better IDE support
 - Resource classes for all major UiPath entities:
-  - Robots
-  - Jobs
-  - Processes
   - Assets
-  - And more...
+  - Queues
+  - Jobs
+  - Folders
+  - Releases
+  - Packages
+  - Libraries
+  - Machines
+  - Processes
+  - Robots
 
 ## Authentication
 
-The SDK supports client credentials authentication. You'll need:
-- Tenant name
+The SDK supports OAuth2 client credentials authentication. You'll need:
 - Client ID
-- Client secret
+- Client Secret
+- Tenant name (optional)
+- Organization ID (optional)
 
 You can obtain these credentials from your UiPath Orchestrator account under Admin → API Access.
 
 ```python
 auth = UiPathAuth(
-    tenant_name="your_tenant",
     client_id="your_client_id",
     client_secret="your_client_secret",
-    scope="OR.Default"  # Optional, defaults to OR.Default
+    tenant_name="your_tenant",  # Optional
+    organization_id="your_org_id",  # Optional
+    scope="OR.Assets",  # Optional
+    auth_url="https://cloud.uipath.com/identity_/connect/token"  # Optional
 )
+
+uipath = UiPathClient(auth)
 ```
 
 ## Usage Examples
@@ -69,19 +80,47 @@ auth = UiPathAuth(
 
 ```python
 # List all robots
-robots = RobotsResource(client)
-all_robots = robots.list_robots()
+all_robots = uipath.robots.get()
 
 # Get a specific robot
-robot = robots.get_robot(robot_id=123)
+robot = uipath.robots.get_by_id(robot_id=123)
 
 # Create a new robot
-new_robot = robots.create_robot(
-    name="MyNewRobot",
-    machine_name="DESKTOP-123",
-    type="Unattended"
-)
+new_robot = uipath.robots.create({
+    "Name": "MyNewRobot",
+    "MachineId": 456,
+    "Type": "Unattended",
+    "Username": "domain\\user"
+    })
+
+# Update robot status
+client.robots.toggle_enabled(robot_id=123, enabled=True)
 ```
+
+```python
+# Start jobs
+uipath.jobs.start_jobs(
+    release_key="your-release-key",
+    robot_ids=[123, 456],
+    strategy="Specific",
+    input_arguments={"param1": "value1"}
+)
+
+# Get jobs by status
+jobs = uipath.jobs.get(state="Running")
+
+# Stop a job
+uipath.jobs.stop_job(job_id=123, strategy="SoftStop")
+
+# Get job logs
+logs = client.jobs.get_job_logs(
+    job_id=789,
+    level="Error",
+    from_date="2024-01-01T00:00:00Z"
+)
+
+```
+
 
 ### Error Handling
 
