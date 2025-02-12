@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="uipath",
-    version="1.0.0",
+    version="1.1.1",
     author="Christian Blandford",
     author_email="christianblandford@me.com",
     description="A Python SDK for UiPath",
