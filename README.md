@@ -27,10 +27,10 @@ client = UiPathClient(
 
 ## 🎯 Why Choose This SDK?
 
+- 📚 **Amazing Docs** - [Check them out here!](https://christianblandford.github.io/uipath/)
 - 🔥 **Complete API Coverage** - Access everything UiPath Orchestrator offers
 - 🎈 **Super Simple Interface** - Designed for humans, by humans
 - 🛡️ **Type Hints** - Get awesome IDE support
-- 📚 **Amazing Docs** - [Check them out here!](https://christianblandford.github.io/uipath/)
 
 ## 🎨 Features
 
