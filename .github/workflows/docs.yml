@@ -32,11 +32,17 @@ jobs:
           pip install mkdocs mkdocs-material mkdocstrings mkdocstrings-python mkdocs-autorefs
           pip install -e .  # Install your package if needed for docs
 
-      # Step 4: Build and Deploy Documentation
-      - name: Build and Deploy Documentation
+      # Step 4: Build the MkDocs site
+      - name: Build MkDocs Site
+        run: mkdocs build
+
+      # Step 5: Add .nojekyll File
+      - name: Add .nojekyll File
+        run: touch site/.nojekyll
+
+      # Step 6: Deploy to GitHub Pages
+      - name: Deploy Documentation
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          # Create the .nojekyll file to disable Jekyll processing
-          touch site/.nojekyll
           mkdocs gh-deploy --force
