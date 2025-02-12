@@ -26,19 +26,16 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    keywords=["uipath", "rpa", "robotic process automation", "automation", "robotics", "orchestrator", "process-automation", "api-client", "api-wrapper", "uipath-api", "uipath-orchestrator", "workflow-automation"],
     python_requires=">=3.7",
     install_requires=[
         "requests>=2.25.0",
-        "typing-extensions>=4.0.0;python_version<'3.8'",
     ],
     extras_require={
         "dev": [
-            "pytest>=6.0",
-            "pytest-cov>=2.0",
-            "black>=22.0",
-            "isort>=5.0",
-            "mypy>=0.900",
-            "flake8>=3.9",
+            "mkdocs-material",
+            "mkdocs-autorefs",
+            "mkdocstrings[python]",
         ],
     }
 ) 

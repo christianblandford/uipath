@@ -12,6 +12,22 @@ from .resources.libraries import LibrariesClient
 from .resources.machines import MachinesClient
 from .resources.processes import ProcessesClient
 from .resources.robots import RobotsClient
+from .resources.directory import DirectoryClient
+from .resources.maintenance import MaintenanceClient
+from .resources.stats import StatsClient
+from .resources.status import StatusClient
+from .resources.test_automation import TestAutomationClient
+from .resources.test_data_queue import TestDataQueueClient
+from .resources.webhooks import WebhooksClient
+from .resources.licensing import LicensingClient
+from .resources.logs import LogsClient
+from .resources.task_forms import TaskFormsClient
+from .resources.alerts import AlertsClient
+from .resources.audit import AuditClient
+from .resources.environments import EnvironmentsClient
+from .resources.metrics import MetricsClient
+from .resources.settings import SettingsClient
+from .resources.users import UsersClient
 
 class UiPathClient(BaseClient):
     def __init__(
@@ -21,17 +37,32 @@ class UiPathClient(BaseClient):
     ):
         super().__init__(auth, base_url)
         
-        # Initialize resource clients
+        # Initialize all resource clients
+        self.alerts = AlertsClient(self)
         self.assets = AssetsClient(self)
-        self.queues = QueuesClient(self)
-        self.jobs = JobsClient(self)
+        self.audit = AuditClient(self)
+        self.directory = DirectoryClient(self)
+        self.environments = EnvironmentsClient(self)
         self.folders = FoldersClient(self)
-        self.releases = ReleasesClient(self)
-        self.packages = PackagesClient(self)
+        self.jobs = JobsClient(self)
         self.libraries = LibrariesClient(self)
+        self.logs = LogsClient(self)
         self.machines = MachinesClient(self)
+        self.maintenance = MaintenanceClient(self)
+        self.metrics = MetricsClient(self)
+        self.packages = PackagesClient(self)
         self.processes = ProcessesClient(self)
+        self.queues = QueuesClient(self)
+        self.releases = ReleasesClient(self)
         self.robots = RobotsClient(self)
+        self.settings = SettingsClient(self)
+        self.stats = StatsClient(self)
+        self.task_forms = TaskFormsClient(self)
+        self.users = UsersClient(self)
+        self.webhooks = WebhooksClient(self)
+        self.test_automation = TestAutomationClient(self)
+        self.test_data_queue = TestDataQueueClient(self)
+        self.licensing = LicensingClient(self)
 
     def _make_request(
         self, 

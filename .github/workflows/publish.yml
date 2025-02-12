@@ -1,12 +1,9 @@
-name: Deploy Documentation
+name: Publish to PyPI
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
+    tags:
+      - 'v*'
 
 jobs:
   deploy:
@@ -20,6 +17,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install .[dev]
-    - name: Deploy docs
-      run: mkdocs gh-deploy --force 
+        pip install build twine
+    - name: Build and publish
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: |
+        python -m build
+        twine upload dist/* 
