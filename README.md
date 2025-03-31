@@ -1,9 +1,13 @@
 # 🤖 UiPath Python SDK
 
-The most awesome Python SDK for UiPath Orchestrator! Automate all the things with simple Python code. 
+The most awesome Python SDK for UiPath Orchestrator! Automate all the things with simple Python code.
 
 [![PyPI version](https://badge.fury.io/py/uipath.svg)](https://badge.fury.io/py/uipath)
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://christianblandford.github.io/uipath/)
+
+> **Disclaimer**:
+This project is an independently maintained Python SDK and is not affiliated with or officially supported by UiPath Inc.
+“UiPath” is a registered trademark of UiPath Inc. Use of the name here is purely for descriptive purposes under nominative fair use and does not imply endorsement.
 
 ## 🚀 Quick Install
 
