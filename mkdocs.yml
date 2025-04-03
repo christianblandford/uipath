@@ -1,7 +1,7 @@
-site_name: UiPath Python SDK
+site_name: uipath-community-sdk
 site_description: Python SDK for UiPath Orchestrator API
-repo_url: https://github.com/christianblandford/uipath
-repo_name: christianblandford/uipath
+repo_url: https://github.com/christianblandford/uipath-community-sdk
+repo_name: christianblandford/uipath-community-sdk
 
 theme:
   name: material
@@ -42,33 +42,33 @@ plugins:
 nav:
   - Home: index.md
   - Resources:
-    - Alerts: resources/alerts.md
-    - Assets: resources/assets.md
-    - Audit: resources/audit.md
-    - Directory: resources/directory.md
-    - Environments: resources/environments.md
-    - Folders: resources/folders.md
-    - Jobs: resources/jobs.md
-    - Libraries: resources/libraries.md
-    - Licensing: resources/licensing.md
-    - Logs: resources/logs.md
-    - Machines: resources/machines.md
-    - Metrics: resources/metrics.md
-    - Packages: resources/packages.md
-    - Processes: resources/processes.md
-    - Queues:
-      - Overview: resources/queues.md
-      - Test Data Queue: resources/queues/test_data_queue.md
-    - Releases: resources/releases.md
-    - Robots: resources/robots.md
-    - Schedules: resources/schedules.md
-    - Settings:
-      - Overview: resources/settings.md
-      - Maintenance: resources/settings/maintenance.md
-    - Stats: resources/stats.md
-    - Status: resources/status.md
-    - Task Forms: resources/task_forms.md
-    - Webhooks: resources/webhooks.md
+      - Alerts: resources/alerts.md
+      - Assets: resources/assets.md
+      - Audit: resources/audit.md
+      - Directory: resources/directory.md
+      - Environments: resources/environments.md
+      - Folders: resources/folders.md
+      - Jobs: resources/jobs.md
+      - Libraries: resources/libraries.md
+      - Licensing: resources/licensing.md
+      - Logs: resources/logs.md
+      - Machines: resources/machines.md
+      - Metrics: resources/metrics.md
+      - Packages: resources/packages.md
+      - Processes: resources/processes.md
+      - Queues:
+          - Overview: resources/queues.md
+          - Test Data Queue: resources/queues/test_data_queue.md
+      - Releases: resources/releases.md
+      - Robots: resources/robots.md
+      - Schedules: resources/schedules.md
+      - Settings:
+          - Overview: resources/settings.md
+          - Maintenance: resources/settings/maintenance.md
+      - Stats: resources/stats.md
+      - Status: resources/status.md
+      - Task Forms: resources/task_forms.md
+      - Webhooks: resources/webhooks.md
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -76,5 +76,4 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-
-# Examples: examples   
+# Examples: examples

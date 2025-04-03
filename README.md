@@ -1,4 +1,4 @@
-# 🤖 UiPath Python SDK
+# 🤖 UiPath Community SDK for Python
 
 The most awesome Python SDK for UiPath Orchestrator! Automate all the things with simple Python code.
 
@@ -6,8 +6,8 @@ The most awesome Python SDK for UiPath Orchestrator! Automate all the things wit
 [![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](https://christianblandford.github.io/uipath/)
 
 > **Disclaimer**:
-This project is an independently maintained Python SDK and is not affiliated with or officially supported by UiPath Inc.
-“UiPath” is a registered trademark of UiPath Inc. Use of the name here is purely for descriptive purposes under nominative fair use and does not imply endorsement.
+> This project is an independently maintained Python SDK and is not affiliated with or officially supported by UiPath Inc.
+> “UiPath” is a registered trademark of UiPath Inc. Use of the name here is purely for descriptive purposes under nominative fair use and does not imply endorsement.
 
 ## 🚀 Quick Install
 
@@ -23,7 +23,7 @@ from uipath import UiPathClient
 # Connect to UiPath in just 3 lines! 🎉
 client = UiPathClient(
     organization_id="your_organization_id",
-    tenant_id="your_tenant_id", 
+    tenant_id="your_tenant_id",
     client_id="your_client_id",
     client_secret="your_client_secret"
 )
@@ -139,4 +139,5 @@ Need help? We've got your back!
 This is an unofficial SDK created with ❤️ by the community. Not affiliated with UiPath Inc.
 
 ---
+
 Made with 🦾 by developers, for developers

@@ -1,4 +1,4 @@
-# UiPath Python SDK
+# UiPath Community SDK for Python
 
 A Python SDK for interacting with the UiPath Orchestrator API.
 
@@ -10,18 +10,19 @@ A Python SDK for interacting with the UiPath Orchestrator API.
 - Comprehensive documentation
 - Examples for common use cases
 
-## Installation 
+## Installation
 
 ```bash
-pip install uipath
+pip install uipath-community-sdk
 ```
 
 ## Quick Start
 
 ```python
-from uipath import UiPathClient
+from importlib import import_module
+uip = import_module('uipath-community-sdk')
 
-client = UiPathClient(
+client = uip.UiPathClient(
     organization_id="your_organization_id",
     tenant_id="your_tenant_id",
     client_id="your_client_id",
